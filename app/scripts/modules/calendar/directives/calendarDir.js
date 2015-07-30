@@ -1,33 +1,72 @@
-angular.module('calendarApp').controller('calendarDirCtrl', function ($scope) {
-
-});
-angular.module('calendarApp').directive('calendar', function () {
+angular.module('calendarApp').directive("calendar", function () {
     return {
+        restrict: "E",
         templateUrl: 'scripts/modules/calendar/views/calendarTpl.html',
-        restrict: 'E',
-        replace: true,
-        controller: 'calendarDirCtrl',
-        link: function (scope, element, attrs, ctrl) {
-            function createDateObjects(startTime) {
-                    var times = [],
-                        row,
-                        time = new Date(startTime.getTime()),
-                        currentHour = time.getHours(),
-                        currentDate = time.getDate();
+        scope: {
+            selected: "="
+        },
+        link: function (scope) {
+            scope.selected = _removeTime(scope.selected || moment());
+            scope.month = scope.selected.clone();
+            var start = scope.selected.clone();
+            scope.next = function () {
+                start.add(1, 'days');
+                _buildWeek(scope, start, scope.month);
+            };
 
-                    for (var hour = 0; hour < 24; hour += 1) {
-                        row = [];
-                        for (var day = 0; day < 7; day += 1) {
-                            time.setHours(currentHour + hour);
-                            time.setDate(currentDate + day);
-                            row.push({
-                                time: new Date(time.getTime())
-                            });
-                        }
-                        times.push(row);
-                    }
-                    return times;
-                }
+            scope.previous = function () {
+                start.subtract(1, 'days');
+                _buildWeek(scope, start, scope.month);
+
+            };
+            _buildHours(scope);
+            _buildWeek(scope, start, scope.month);
+        
+        }
+
+    };
+
+    function _removeTime(date) {
+        return date.day(0).hour(0).minute(0).second(0).millisecond(0);
+    }
+
+    function _buildWeek(scope, date, month) {
+        scope.days = [];
+        for (var i = 0; i < 7; i++) {
+            scope.days.push({
+                name: date.format("ddd"),
+                number: date.date(),
+                date: date
+            });
+            date = date.clone();
+            date.add(1, "d");
+        }
+        console.log(scope.days);
+    }
+
+    function _buildHours(scope) {
+        var isHalf = false;
+        scope.hours = [];
+        for (var i = 0; i <= 23; i++) {
+            if (i < 10) {
+                scope.hours.push({
+                    time: "0" + i + ":00",
+                    isHalf: false
+                });
+                scope.hours.push({
+                    time: "0" + i + ":30",
+                    isHalf: true
+                });
+            } else {
+                scope.hours.push({
+                    time: i + ":00",
+                    isHalf: false
+                });
+                scope.hours.push({
+                    time: i + ":30",
+                    isHalf: true
+                });
+            }
         }
     }
 });

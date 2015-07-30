@@ -13,7 +13,8 @@
     "angular": "~1.4.1",
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.5",
-    "ng-responsive-calendar": "~0.1.4"
+    "moment": "~2.10.6",
+    "angular-moment": "~0.10.2"
   },
   "resolutions": {
     "angular": "~1.2",
