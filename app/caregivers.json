@@ -1,0 +1,42 @@
+[
+    {
+        "careGiver_id": 1,
+
+        "workingPeriods": [
+            {
+                "workingPeriod_id": 1,
+                "period_booking": {
+                    "booking_id": 1,
+                    "client": 1,
+                    "booking_note": "",
+                    "booking_review": null
+                },
+                "period_startDate": "2015-07-14",
+                "period_startHour": "2015-07-14T16:22:43Z",
+                "period_endHour": "2015-07-14T18:22:44Z"
+            },
+            {
+                "workingPeriod_id": 2,
+                "period_booking": null,
+                "period_startDate": "2015-07-14",
+                "period_startHour": "2015-07-14T19:00:00Z",
+                "period_endHour": "2015-07-14T23:00:00Z"
+            },
+            {
+                "workingPeriod_id": 3,
+                "period_booking": null,
+                "period_startDate": "2015-07-15",
+                "period_startHour": "2015-07-14T19:37:41Z",
+                "period_endHour": "2015-07-14T21:37:42Z"
+            },
+            {
+                "workingPeriod_id": 4,
+                "period_booking": null,
+                "period_startDate": "2015-07-16",
+                "period_startHour": "2015-07-14T11:38:08Z",
+                "period_endHour": "2015-07-14T13:38:06Z"
+            }
+        ],
+        "workingAreas": []
+    }
+]

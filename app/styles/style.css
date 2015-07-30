@@ -1,0 +1,74 @@
+body{
+  font-size: 20px;
+  overflow-x: hidden;
+}
+a{
+  color: #414143;
+}
+.glyphicon-envelope:before{
+  font-size: 20px;
+}
+span.icon-bar{
+  color: #414143;
+}
+a span.glyphicon-envelope{
+  padding-top: -5px;
+}
+nav.navbar a{
+  color: #414143;
+  font-weight: bolder;
+  padding-top: 10px;
+}
+nav.navbar{
+  padding: 20px;
+}
+.header-block{
+  background: #414143;
+}
+.header-block--text{
+  font-size: 2em;
+  color: #fff;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+.menu-block{
+  background: #C8DD68;
+}
+.menu-block--option{
+  transition: all 0.3s;
+  display: inline-block;
+}
+.menu-block--option a:hover{
+  transition: all 0.3s;
+  text-decoration:none;
+  color: #fff;
+}
+.menu-block--items{
+  padding: 15px;
+}
+.table-bordered, .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+border-left: none;
+border-right: none;
+border-color: #414143;
+}
+.weekview-allday-label{
+  width: inherit;
+  height: inherit;
+  border: none;
+}
+.btn-default,.btn-default.active, .btn-default:active, .btn-default:focus, .btn-default:hover, .open .dropdown-toggle.btn-default {
+  border: none; !important;
+  background-color: transparent;!important;
+}
+.calendar-event-inner{
+  background-color: #A5D6E2;
+}
+.main-block{
+  background-color: #F0ECE9;
+  height:auto;
+}
+.scrollable {
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+}
